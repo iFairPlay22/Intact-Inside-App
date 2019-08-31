@@ -1,19 +1,19 @@
 <template>
-  <div id="app">
+  <v-app>
     <mast-head
       :links="links"/>
-
+ 
     <router-view />
 
     <mast-foot
       :links="links"/>
-  </div>
+  </v-app>
 </template>
-
+ 
 <script>
   import MastHead from "./components/MastHead"
   import MastFoot from "./components/MastFoot"
-
+ 
   export default {
     name: "App",
     components: {
@@ -26,25 +26,25 @@
           [
             {
               name: 'About',
-              link: 'home#about'
+              link: '#about'
             },
             {
               name: 'Music',
-              link: 'home#music'
+              link: '#music'
             },
             {
               name: 'Playlists',
-              link: 'home#playlist'
+              link: '#playlist'
             },
             {
               name: 'Contact',
-              link: 'home#contact'
+              link: '#contact'
             }
           ]
       }
     }
   };
-</script>
+ </script>
 
 
 <style>
