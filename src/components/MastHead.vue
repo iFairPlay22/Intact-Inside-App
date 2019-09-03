@@ -1,43 +1,33 @@
 <template>
-  <v-toolbar 
-    color="rgb(219, 214, 214, 0.3)" 
-    flat 
-    scroll-off-screen 
-    app
-  >
-    <v-toolbar-side-icon class="white--text"/>
-    <v-btn 
-      class="white--text"
-      flat
-      to="/"
-    >
-      {{ applicationName }}
-    </v-btn>
-    <v-spacer/>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn
-        v-for="({ name, link }, i) in links"
-        :key="i"
-        :to="link"
-        class="white--text"
-        flat
-      >
-        {{ name }}
-      </v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
+        <v-app-bar 
+          absolute 
+          color="rgba(145,145,145,.1)" 
+          dark 
+          dense
+          prominent>
+            <v-app-bar-nav-icon/>
+            <v-toolbar-title class="text-center mb-1">
+                Intact Inside
+            </v-toolbar-title>
+            <div class="flex-grow-1"></div>
+            <v-btn icon>
+                <v-icon>mdi-heart</v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon>share</v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon>create</v-icon>
+            </v-btn>
+        </v-app-bar>
 </template>
 
 <script>
   export default {
     name: "MastHead",
-    components: {
-    
-    },
-    props: ['links'],
     data() {
       return {
-        applicationName: "Intact Inside"    
+        
       }
     }
   };

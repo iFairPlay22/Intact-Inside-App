@@ -1,14 +1,13 @@
 <template>
-  <v-app>
-    <mast-head
-      :links="links"/>
- 
-    <router-view />
+    <v-app id="content">
+        <mast-head/>
 
-    <mast-foot
-      :links="links"/>
-  </v-app>
+        <router-view/>
+
+        <mast-foot/>
+    </v-app>
 </template>
+
  
 <script>
   import MastHead from "./components/MastHead"
@@ -25,22 +24,39 @@
         links: 
           [
             {
-              name: 'About',
+              name: 'About Me',
               link: '#about'
             },
             {
-              name: 'Music',
+              name: 'Last Songs',
               link: '#music'
             },
             {
-              name: 'Playlists',
+              name: 'Albums',
               link: '#playlist'
             },
             {
               name: 'Contact',
               link: '#contact'
             }
-          ]
+          ],
+        window: {
+          width: 0,
+          height: 0
+        }
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.handleResize)
+      this.handleResize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize)
+    },
+    methods: {
+      handleResize() {
+        this.window.width = window.innerWidth;
+        this.window.height = window.innerHeight;
       }
     }
   };

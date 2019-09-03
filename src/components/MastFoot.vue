@@ -1,96 +1,34 @@
 <template>
-    <v-footer
-            app
-            height="auto"
-            color="rgb(219, 214, 214, 0.1)"
-            class="white--text"
-    >
-        <v-layout 
-            column 
-            align-center
-        >
-            <v-layout
-                    row
-                    wrap
-                    justify-center
-                    align-center
-            >
-                <v-btn
-                    v-for="({ name, link }, i) in links"
-                    :key="i"
-                    :to="link"
-                    class="white--text"
-                    flat
-                    round
-                >
-                    {{ name }}
-                </v-btn>
+    <v-bottom-navigation
+      absolute
+      background-color="rgba(145,145,145,.1)" 
+      color="black"
+      dark
+      horizontal
+  >
+    <v-btn>
+      <span>Like</span>
+      <v-icon>mdi-heart</v-icon>
+    </v-btn>
 
-                <v-bottom-sheet v-model="sheet">
-                    <template #activator>
-                        <v-btn
-                            color="rgb(233, 51, 51, 0.8)"
-                            dark
-                            round
-                        >
-                            Share
-                        </v-btn>
-                    </template>
-                    <v-list>
-                        <v-subheader>Share in</v-subheader>
-                        <v-list-tile
-                            v-for="({ title, img }, i) in tiles"
-                            :key="i"
-                            @click="sheet = false"
-                        >
-                            <v-list-tile-avatar>
-                                <v-avatar size="32px" tile>
-                                    <img
-                                        :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${ img }`"
-                                        :alt="title"
-                                    >
-                                </v-avatar>
-                            </v-list-tile-avatar>
-                            <v-list-tile-title>
-                                {{ title }}
-                            </v-list-tile-title>
-                        </v-list-tile>
-                    </v-list>
-                </v-bottom-sheet>
-            </v-layout>
+    <v-btn>
+      <span>Share</span>
+      <v-icon>share</v-icon>
+    </v-btn>
 
-            <p class="py-1 text-xs-center">
-                &copy;2019 — Bouquet / Devessier
-            </p>
-        </v-layout>
-    </v-footer>
+    <v-btn>
+      <span>Contact us</span>
+      <v-icon>create</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
 
 <script>
     export default {
         name: 'MastFoot',
-        props: ['links'],
         data () {
             return {
-                sheet: false,
-                tiles: [
-                    {
-                        img: 'keep.png',
-                        title: 'Keep'
-                    },
-                    {
-                        img: 'inbox.png',
-                        title: 'Inbox'
-                    },
-                    {
-                        img: 'hangouts.png',
-                        title: 'Hangouts'
-                    },
-                    {
-                        img: 'messenger.png',
-                        title: 'Messenger'
-                    }
-                ],
+                
             }
         }
     }
