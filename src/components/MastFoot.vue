@@ -2,23 +2,21 @@
     <v-bottom-navigation
       absolute
       background-color="rgba(145,145,145,.1)" 
-      color="black"
+      color="white"
       dark
       horizontal
   >
-    <v-btn>
-      <span>Like</span>
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Share</span>
-      <v-icon>share</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Contact us</span>
-      <v-icon>create</v-icon>
+    <v-btn 
+      v-for="({title, icon, link}, i) in items"
+      :key="i"  
+      @click="redirect(link)"
+    >
+      <span class="subtitle-1">
+        {{ title }}
+      </span>
+      <v-icon>
+        {{ icon }}
+      </v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
@@ -28,8 +26,35 @@
         name: 'MastFoot',
         data () {
             return {
-                
+                items: 
+                [
+                  
+                  {
+                    title: "Share",
+                    icon: "share",
+                    link: ""
+                  },
+                  {
+                    title: "Facebook",
+                    icon: "mdi-facebook",
+                    link: "https://www.facebook.com/insideintact/"
+                  },
+                  {
+                    title: "Youtube",
+                    icon: "mdi-youtube",
+                    link: "https://www.youtube.com/channel/UC2AtMri_kgObNgW2jH7iOFw/"
+                  }
+                ]
             }
+        },
+        methods: {
+          redirect(link) {
+            if (link !== "") {
+              window.open(link, '_blank');
+            } else {
+              window.location.href = "mailto:intact.inside@gmail.com";
+            }
+          }
         }
     }
 </script>
