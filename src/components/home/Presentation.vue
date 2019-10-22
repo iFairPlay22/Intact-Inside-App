@@ -1,5 +1,5 @@
 <template>
-    <v-carousel height="100%" hide-delimiters interval=10>
+    <v-carousel height="100%" width="100%" hide-delimiters interval="1000">
         <v-carousel-item v-for="(link, i) in links" :key="i" :src="link">
             <v-container grid-list-md class="container">
                 <v-layout align-center justify-center space-around column fill-height>
@@ -43,6 +43,5 @@
 <style scoped>
   .container {
     margin-top: 200px;
-    margin-bottom: 200px;
   }
 </style>

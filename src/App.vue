@@ -1,10 +1,10 @@
 <template>
-    <v-app id="content">
-        <mast-head/>
+    <v-app>
+      <mast-head/>
 
-        <router-view/>
-
-        <mast-foot/>
+      <router-view/>
+        
+      <mast-foot/>
     </v-app>
 </template>
  
@@ -43,3 +43,25 @@
     }
   };
  </script>
+
+ <style>
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(145, 145, 145, .4); 
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(145, 145, 145, .6); 
+  }
+ </style>

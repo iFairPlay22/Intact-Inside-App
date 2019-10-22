@@ -1,5 +1,5 @@
 <template>
-    <v-card color="rgba(145,145,145,.3)" width="60%" class="mt-12">
+    <v-card color="rgba(145,145,145,.3)" width="60%" class="mt-12" min-width="300px">
         <v-card-title>
             <v-icon large left>
                 chevron_right
@@ -26,7 +26,7 @@
                                 </v-list-item-content>
                             </v-list-item-group>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-content style="max-height: 200px" class="overflow-y-auto">
 
                             <v-list color="transparent">
                                 <v-list-item-group>
@@ -63,7 +63,7 @@
                                 </v-list-item-content>
                             </v-list-item-group>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-content style="max-height: 200px" class="overflow-y-auto">
 
                             <v-list color="transparent">
                                 <v-list-item-group>
@@ -99,7 +99,7 @@
                                 </v-list-item-content>
                             </v-list-item-group>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-content style="max-height: 200px" class="overflow-y-auto">
 
                             <v-list color="transparent">
                                 <v-list-item-group>

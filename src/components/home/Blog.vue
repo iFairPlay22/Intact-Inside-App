@@ -1,5 +1,5 @@
 <template>
-    <v-card color="rgba(145,145,145,.3)" width="60%" class="mt-12">
+    <v-card color="rgba(145,145,145,.3)" width="60%" class="mt-12" min-width="300px">
         <v-card-title class="d-flex justify-center mr-5">
             <span>
                 <v-icon large left>

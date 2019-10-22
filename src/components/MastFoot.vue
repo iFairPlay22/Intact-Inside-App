@@ -1,6 +1,6 @@
 <template>
     <v-bottom-navigation
-      absolute
+      app
       background-color="rgba(145,145,145,.1)" 
       color="white"
       dark

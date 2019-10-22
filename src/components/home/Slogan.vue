@@ -1,5 +1,5 @@
 <template>
-    <v-card color="rgba(145,145,145,.3)" width="60%">
+    <v-card color="rgba(145,145,145,.3)" width="60%" min-width="300px">
         <v-card-title>
             <v-icon large left>
                 chevron_right
