@@ -1,19 +1,17 @@
 <template>
-  <presentation/>
+  <presentation />
 </template>
 
 <script>
-  import Presentation from "./../components/home/Presentation"
+import Presentation from "./../components/home/Presentation";
 
-   export default {
-    name: "Home",
-     components: {
-      Presentation
-     },
-     data() {
-       return {
-        
-       }
-     }
-   };
+export default {
+  name: "Home",
+  components: {
+    Presentation
+  },
+  data() {
+    return {};
+  }
+};
 </script>
