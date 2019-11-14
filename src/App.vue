@@ -1,9 +1,11 @@
 <template>
   <v-app class="background-image">
     <mast-head />
-
-    <router-view />
-
+    <v-content>
+      <v-container fluid class="pa-0 text-center">
+        <router-view />
+      </v-container>
+    </v-content>
     <mast-foot />
   </v-app>
 </template>
