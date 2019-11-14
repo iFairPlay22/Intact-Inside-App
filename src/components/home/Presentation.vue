@@ -7,7 +7,7 @@
           <albums />
           <!--
                         <blog/>
-                    -->
+          -->
         </v-layout>
       </v-container>
     </v-carousel-item>

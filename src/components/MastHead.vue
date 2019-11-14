@@ -1,19 +1,10 @@
 <template>
   <v-app-bar app color="rgba(145,145,145,.1)" dark dense prominent>
     <v-app-bar-nav-icon />
-    <v-toolbar-title class="text-center mb-1 headline">
-      Intact Inside
-    </v-toolbar-title>
+    <v-toolbar-title class="text-center mb-1 headline">Intact Inside</v-toolbar-title>
     <div class="flex-grow-1"></div>
-    <v-btn
-      icon
-      v-for="({ icon, link }, i) in icons"
-      :key="i"
-      @click="redirect(link)"
-    >
-      <v-icon>
-        {{ icon }}
-      </v-icon>
+    <v-btn icon v-for="({ icon, link }, i) in icons" :key="i" @click="redirect(link)">
+      <v-icon>{{ icon }}</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
@@ -25,16 +16,16 @@ export default {
     return {
       icons: [
         {
-          icon: "share",
-          link: ""
-        },
-        {
           icon: "mdi-facebook",
-          link: "https://www.facebook.com/insideintact/"
+          link: "https://www.facebook.com/PhilippeFournierVoquer/"
         },
         {
           icon: "mdi-youtube",
           link: "https://www.youtube.com/channel/UC2AtMri_kgObNgW2jH7iOFw/"
+        },
+        {
+          icon: "mdi-email",
+          link: ""
         }
       ]
     };
