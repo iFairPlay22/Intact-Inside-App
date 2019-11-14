@@ -5,6 +5,7 @@
     color="black"
     dark
     horizontal
+    hide-on-scroll
   >
     <v-btn
       v-for="({ title, icon, link }, i) in items"

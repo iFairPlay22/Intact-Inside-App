@@ -1,5 +1,12 @@
 <template>
-  <v-app-bar app color="rgba(255,255,255,.025)" light dense prominent>
+  <v-app-bar
+    app
+    color="rgba(255,255,255,.025)"
+    light
+    dense
+    prominent
+    hide-on-scroll
+  >
     <div class="flex-grow-1"></div>
     <v-btn
       icon
