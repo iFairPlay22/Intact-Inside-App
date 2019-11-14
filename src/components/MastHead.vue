@@ -1,7 +1,12 @@
 <template>
-  <v-app-bar app color="rgba(145,145,145,.1)" dark dense prominent>
+  <v-app-bar app color="rgba(255,255,255,.025)" light dense prominent>
     <div class="flex-grow-1"></div>
-    <v-btn icon v-for="({ icon, link }, i) in icons" :key="i" @click="redirect(link)">
+    <v-btn
+      icon
+      v-for="({ icon, link }, i) in icons"
+      :key="i"
+      @click="redirect(link)"
+    >
       <v-icon class="black--text text--darken-1">{{ icon }}</v-icon>
     </v-btn>
   </v-app-bar>

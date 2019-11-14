@@ -1,8 +1,18 @@
 <template>
-  <v-bottom-navigation app background-color="rgba(145,145,145,.1)" color="black" dark horizontal>
-    <v-btn v-for="({ title, icon, link }, i) in items" :key="i" @click="redirect(link)">
-      <span class="subtitle-1 black--text text--darken-2">{{ title }}</span>
-      <v-icon class="black--text text--darken-2">{{ icon }}</v-icon>
+  <v-bottom-navigation
+    app
+    background-color="rgba(255,255,255,.025)"
+    color="black"
+    dark
+    horizontal
+  >
+    <v-btn
+      v-for="({ title, icon, link }, i) in items"
+      :key="i"
+      @click="redirect(link)"
+    >
+      <span class="subtitle-1 black--text">{{ title }}</span>
+      <v-icon class="black--text">{{ icon }}</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>

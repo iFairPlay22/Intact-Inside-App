@@ -41,9 +41,9 @@ export default {
     };
   }
 };
-</script scoped>
+</script>
 
-<style>
+<style scoped>
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
