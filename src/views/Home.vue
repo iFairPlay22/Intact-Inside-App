@@ -9,9 +9,6 @@ export default {
   name: "Home",
   components: {
     Presentation
-  },
-  data() {
-    return {};
   }
 };
 </script>

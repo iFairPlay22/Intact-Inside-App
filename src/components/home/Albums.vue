@@ -2,7 +2,7 @@
   <v-card color="rgba(145, 145, 145, .3)" width="60%" class="mt-12" min-width="300px">
     <v-card-title>
       <v-icon large left>chevron_right</v-icon>
-      <span class="font-weight-light display-1">My albums</span>
+      <span class="font-weight-light display-1 black--text text--darken-2">My albums</span>
     </v-card-title>
     <v-card-text>
       <v-list color="transparent">
@@ -16,7 +16,7 @@
             <v-list-item-avatar>
               <v-img max-width="40px" max-height="40px" :src="songs[songIndex - 1].img" />
             </v-list-item-avatar>
-            <v-list-item-title class="headline">
+            <v-list-item-title class="headline black--text text--darken-2">
               {{
               songs[songIndex - 1].title
               }}
@@ -34,7 +34,7 @@
                 <v-list-item-avatar>
                   <v-img :src="image" />
                 </v-list-item-avatar>
-                <v-list-item-title v-text="name" class="subtitle-1" />
+                <v-list-item-title v-text="name" class="subtitle-1 black--text text--darken-2" />
               </v-list-item>
             </v-list-item-group>
           </v-card>

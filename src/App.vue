@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="background-image">
     <mast-head />
 
     <router-view />
@@ -41,7 +41,7 @@ export default {
     };
   }
 };
-</script>
+</script scoped>
 
 <style>
 /* width */
@@ -62,5 +62,11 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(145, 145, 145, 0.6);
+}
+
+.background-image {
+  background-image: url("assets/Carousel/5.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 </style>
