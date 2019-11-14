@@ -5,6 +5,7 @@
     color="black"
     dark
     horizontal
+    scroll-threshold="0"
     hide-on-scroll
   >
     <v-btn

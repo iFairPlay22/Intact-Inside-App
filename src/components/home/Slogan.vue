@@ -1,10 +1,16 @@
 <template>
-  <v-card color="rgba(255,255,255,.5)" width="60%" min-width="300px">
+  <v-card
+    color="rgba(255,255,255,.5)"
+    width="60%"
+    min-width="300px"
+    scroll-threshold="0"
+    hide-on-scroll
+  >
     <v-card-title>
       <v-icon large left>chevron_right</v-icon>
       <span class="font-weight-light display-1 black--text">Intact Inside</span>
     </v-card-title>
-    <v-card-text class="headline justify-center black--text">
+    <v-card-text class="headline justify-center black--text text-left">
       Every month is a new chance and a new hope! I hope you will enjoy my
       albums as much as I enjoyed releasing them.
     </v-card-text>
@@ -17,7 +23,7 @@
           />
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title class="subtitle-1 black--text"
+          <v-list-item-title class="subtitle-1 black--text text-left"
             >Philippe Fournier</v-list-item-title
           >
         </v-list-item-content>
@@ -31,3 +37,9 @@ export default {
   name: "Slogan"
 };
 </script>
+
+<style scoped>
+.text-left {
+  text-align: left;
+}
+</style>

@@ -5,6 +5,7 @@
     light
     dense
     prominent
+    scroll-threshold="0"
     hide-on-scroll
   >
     <div class="flex-grow-1"></div>

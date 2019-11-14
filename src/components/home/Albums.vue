@@ -25,9 +25,9 @@
                 :src="songs[songIndex - 1].img"
               />
             </v-list-item-avatar>
-            <v-list-item-title class="headline black--text">
-              {{ songs[songIndex - 1].title }}
-            </v-list-item-title>
+            <v-list-item-title class="headline black--text text-left">{{
+              songs[songIndex - 1].title
+            }}</v-list-item-title>
           </template>
 
           <v-card class="overflow-y-auto box" color="transparent">
@@ -43,7 +43,7 @@
                 </v-list-item-avatar>
                 <v-list-item-title
                   v-text="name"
-                  class="subtitle-1 black--text"
+                  class="subtitle-1 black--text text-left"
                 />
               </v-list-item>
             </v-list-item-group>
@@ -69,7 +69,7 @@ export default {
       songs: [
         {
           listenedSong: -1,
-          title: "Years",
+          title: "Space",
           img: require("../../assets/Albums/years.jpg"),
           array: [
             {
@@ -111,7 +111,7 @@ export default {
         },
         {
           listenedSong: -1,
-          title: "Space",
+          title: "Years",
           img: require("../../assets/Albums/space.jpg"),
           array: [
             {
@@ -246,5 +246,9 @@ export default {
 
 .inherit {
   color: inherit;
+}
+
+.text-left {
+  text-align: left;
 }
 </style>
