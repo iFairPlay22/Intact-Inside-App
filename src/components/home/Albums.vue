@@ -25,9 +25,9 @@
                 :src="songs[songIndex - 1].img"
               />
             </v-list-item-avatar>
-            <v-list-item-title class="headline black--text text-left">{{
-              songs[songIndex - 1].title
-            }}</v-list-item-title>
+            <v-list-item-title class="headline black--text text-left">
+              {{ songs[songIndex - 1].title }}
+            </v-list-item-title>
           </template>
 
           <v-card class="overflow-y-auto box" color="transparent">
@@ -70,7 +70,7 @@ export default {
         {
           listenedSong: -1,
           title: "Space",
-          img: require("../../assets/Albums/years.jpg"),
+          img: require("../../assets/Albums/space.jpg"),
           array: [
             {
               name: "Philae & Rosetta",
@@ -112,7 +112,7 @@ export default {
         {
           listenedSong: -1,
           title: "Years",
-          img: require("../../assets/Albums/space.jpg"),
+          img: require("../../assets/Albums/years.jpg"),
           array: [
             {
               name: "January",
