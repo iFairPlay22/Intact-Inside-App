@@ -70,41 +70,41 @@ export default {
         {
           listenedSong: -1,
           title: "Space",
-          img: require("../../assets/Albums/space.jpg"),
+          img: require("../../assets/Albums/space.png"),
           array: [
             {
               name: "Philae & Rosetta",
-              image: require("../../assets/Albums/Space/PhilaeRosetta.jpg"),
+              image: require("../../assets/Albums/Space/PhilaeRosetta.png"),
               song: require("../../assets/AlbumsSongs/Space/PhilaeRosetta.mp3")
             },
             {
               name: "Saturn",
-              image: require("../../assets/Albums/Space/Saturn.jpg"),
+              image: require("../../assets/Albums/Space/Saturn.png"),
               song: require("../../assets/AlbumsSongs/Space/Saturn.mp3")
             },
             {
               name: "Sunset on Mars",
-              image: require("../../assets/Albums/Space/SunsetOnMars.jpg"),
+              image: require("../../assets/Albums/Space/SunsetOnMars.png"),
               song: require("../../assets/AlbumsSongs/Space/SunsetOnMars.mp3")
             },
             {
               name: "The Kuiper Belt",
-              image: require("../../assets/Albums/Space/TheKuiperBelt.jpg"),
+              image: require("../../assets/Albums/Space/TheKuiperBelt.png"),
               song: require("../../assets/AlbumsSongs/Space/TheKuiperBelt.mp3")
             },
             {
               name: "Super Moon",
-              image: require("../../assets/Albums/Space/SuperMoon.jpg"),
+              image: require("../../assets/Albums/Space/SuperMoon.png"),
               song: require("../../assets/AlbumsSongs/Space/SuperMoon.mp3")
             },
             {
               name: "Orion fighting the scorpion",
-              image: require("../../assets/Albums/Space/OrionFightingTheScorpion.jpg"),
+              image: require("../../assets/Albums/Space/OrionFightingTheScorpion.png"),
               song: require("../../assets/AlbumsSongs/Space/OrionFightingTheScorpion.mp3")
             },
             {
               name: "Pluton & Charon",
-              image: require("../../assets/Albums/Space/PlutonCharon.jpg"),
+              image: require("../../assets/Albums/Space/PlutonCharon.png"),
               song: require("../../assets/AlbumsSongs/Space/PlutonCharon.mp3")
             }
           ]
@@ -112,66 +112,69 @@ export default {
         {
           listenedSong: -1,
           title: "Years",
-          img: require("../../assets/Albums/years.jpg"),
+          img: require("../../assets/Albums/years.png"),
           array: [
             {
               name: "January",
-              image: require("../../assets/Albums/Years/January.jpg"),
+              image: require("../../assets/Albums/Years/January.png"),
               song: require("../../assets/AlbumsSongs/Years/January.mp3")
             },
             {
               name: "February",
-              image: require("../../assets/Albums/Years/February.jpg"),
+              image: require("../../assets/Albums/Years/February.png"),
               song: require("../../assets/AlbumsSongs/Years/February.mp3")
             },
             {
               name: "March",
-              image: require("../../assets/Albums/Years/March.jpg"),
+              image: require("../../assets/Albums/Years/March.png"),
               song: require("../../assets/AlbumsSongs/Years/March.mp3")
             },
             {
               name: "April",
-              image: require("../../assets/Albums/Years/April.jpg"),
+              image: require("../../assets/Albums/Years/April.png"),
               song: require("../../assets/AlbumsSongs/Years/April.mp3")
             },
             {
               name: "May",
-              image: require("../../assets/Albums/Years/May.jpg"),
+              image: require("../../assets/Albums/Years/May.png"),
               song: require("../../assets/AlbumsSongs/Years/May.mp3")
             },
             {
               name: "June",
-              image: require("../../assets/Albums/Years/June.jpg"),
+              image: require("../../assets/Albums/Years/June.png"),
               song: require("../../assets/AlbumsSongs/Years/June.mp3")
             },
             {
               name: "July",
-              image: require("../../assets/Albums/Years/July.jpg"),
+              image: require("../../assets/Albums/Years/July.png"),
               song: require("../../assets/AlbumsSongs/Years/July.mp3")
             },
             {
               name: "August",
-              image: require("../../assets/Albums/Years/August.jpg"),
+              image: require("../../assets/Albums/Years/August.png"),
               song: require("../../assets/AlbumsSongs/Years/August.mp3")
             },
             {
               name: "September",
-              image: require("../../assets/Albums/Years/September.jpg"),
-              song: require("../../assets/AlbumsSongs/Years/September.mp3")
+              //TODO: add September song!
+              image: require("../../assets/Albums/Years/August.png"),
+              song: require("../../assets/AlbumsSongs/Years/August.mp3")
+              //image: require("../../assets/Albums/Years/September.png"),
+              //song: require("../../assets/AlbumsSongs/Years/September.mp3")
             },
             {
               name: "October",
-              image: require("../../assets/Albums/Years/October.jpg"),
+              image: require("../../assets/Albums/Years/October.png"),
               song: require("../../assets/AlbumsSongs/Years/October.mp3")
             },
             {
               name: "November",
-              image: require("../../assets/Albums/Years/November.jpg"),
+              image: require("../../assets/Albums/Years/November.png"),
               song: require("../../assets/AlbumsSongs/Years/November.mp3")
             },
             {
               name: "December",
-              image: require("../../assets/Albums/Years/December.jpg"),
+              image: require("../../assets/Albums/Years/December.png"),
               song: require("../../assets/AlbumsSongs/Years/December.mp3")
             }
           ]
@@ -180,7 +183,38 @@ export default {
           listenedSong: -1,
           title: "Reverse",
           img: require("../../assets/Albums/versus.png"),
-          array: []
+          array: [
+            {
+              name: "Old & Young (47)",
+              image: require("../../assets/Albums/Versus/Old&Young.png"),
+              song: require("../../assets/AlbumsSongs/Versus/Old&Young.mp3")
+            },
+            {
+              name: "South & North",
+              image: require("../../assets/Albums/Versus/South&North.png"),
+              song: require("../../assets/AlbumsSongs/Versus/South&North.mp3")
+            },
+            {
+              name: "White & Black",
+              image: require("../../assets/Albums/Versus/White&Black.png"),
+              song: require("../../assets/AlbumsSongs/Versus/White&Black.mp3")
+            },
+            {
+              name: "Far & Close to me (Ker Lann)",
+              image: require("../../assets/Albums/Versus/Far&CloseToMe.png"),
+              song: require("../../assets/AlbumsSongs/Versus/Far&CloseToMe.mp3")
+            },
+            {
+              name: "Right & Wrong",
+              image: require("../../assets/Albums/Versus/Right&Wrong.png"),
+              song: require("../../assets/AlbumsSongs/Versus/Right&Wrong.mp3")
+            },
+            {
+              name: "Life & Death",
+              image: require("../../assets/Albums/Versus/Life&Death.png"),
+              song: require("../../assets/AlbumsSongs/Versus/Life&Death.mp3")
+            }
+          ]
         }
       ]
     };

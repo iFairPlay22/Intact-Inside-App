@@ -67,7 +67,7 @@ export default {
 }
 
 .background-image {
-  background-image: url("assets/Carousel/5.jpg") !important;
+  background-image: url("assets/background.jpg") !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
