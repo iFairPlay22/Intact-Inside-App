@@ -1,10 +1,10 @@
 <template>
   <v-card
-    color="rgba(255,255,255,.5)"
+    color="rgba(255,255,255,.99)"
     width="60%"
     class="mt-12"
     min-width="300px"
-  >
+  ><!-- rgba(255,255,255,.5) -->
     <v-card-title>
       <v-icon large left>chevron_right</v-icon>
       <span class="font-weight-light display-1 black--text">My albums</span>
@@ -157,7 +157,7 @@ export default {
             {
               name: "September",
               //TODO: add September song!
-              image: require("../../assets/Albums/Years/August.png"),
+              image: require("../../assets/Albums/Years/September.png"),
               song: require("../../assets/AlbumsSongs/Years/August.mp3")
               //image: require("../../assets/Albums/Years/September.png"),
               //song: require("../../assets/AlbumsSongs/Years/September.mp3")

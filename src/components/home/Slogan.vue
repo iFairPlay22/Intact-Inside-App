@@ -1,11 +1,11 @@
 <template>
   <v-card
-    color="rgba(255,255,255,.5)"
+    color="rgba(255,255,255,0.99)"
     width="60%"
     min-width="300px"
     scroll-threshold="0"
     hide-on-scroll
-  >
+  ><!-- rgba(255,255,255,.5) -->
     <v-card-title>
       <v-icon large left>chevron_right</v-icon>
       <span class="font-weight-light display-1 black--text">Intact Inside</span>

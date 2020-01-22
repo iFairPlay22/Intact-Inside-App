@@ -15,7 +15,7 @@
       :key="i"
       @click="redirect(link)"
     >
-      <v-icon class="black--text text--darken-1">{{ icon }}</v-icon>
+      <v-icon class="white--text text--darken-1">{{ icon }}</v-icon><!-- black -->
     </v-btn>
   </v-app-bar>
 </template>

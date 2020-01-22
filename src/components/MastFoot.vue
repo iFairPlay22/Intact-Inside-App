@@ -13,8 +13,8 @@
       :key="i"
       @click="redirect(link)"
     >
-      <span class="subtitle-1 black--text">{{ title }}</span>
-      <v-icon class="black--text">{{ icon }}</v-icon>
+      <span class="subtitle-1 white--text">{{ title }}</span> <!-- black -->
+      <v-icon class="white--text">{{ icon }}</v-icon> <!-- black -->
     </v-btn>
   </v-bottom-navigation>
 </template>
