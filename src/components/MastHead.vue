@@ -9,13 +9,9 @@
     hide-on-scroll
   >
     <div class="flex-grow-1"></div>
-    <v-btn
-      icon
-      v-for="({ icon, link }, i) in icons"
-      :key="i"
-      @click="redirect(link)"
-    >
-      <v-icon class="white--text text--darken-1">{{ icon }}</v-icon><!-- black -->
+    <v-btn icon v-for="({ icon, link }, i) in icons" :key="i" @click="redirect(link)">
+      <v-icon class="white--text text--darken-1">{{ icon }}</v-icon>
+      <!-- black -->
     </v-btn>
   </v-app-bar>
 </template>

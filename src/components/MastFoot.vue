@@ -8,13 +8,11 @@
     scroll-threshold="0"
     hide-on-scroll
   >
-    <v-btn
-      v-for="({ title, icon, link }, i) in items"
-      :key="i"
-      @click="redirect(link)"
-    >
-      <span class="subtitle-1 white--text">{{ title }}</span> <!-- black -->
-      <v-icon class="white--text">{{ icon }}</v-icon> <!-- black -->
+    <v-btn v-for="({ title, icon, link }, i) in items" :key="i" @click="redirect(link)">
+      <span class="subtitle-1 white--text">{{ title }}</span>
+      <!-- black -->
+      <v-icon class="white--text">{{ icon }}</v-icon>
+      <!-- black -->
     </v-btn>
   </v-bottom-navigation>
 </template>
