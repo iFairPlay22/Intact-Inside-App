@@ -145,11 +145,8 @@ export default {
             },
             {
               name: "September",
-              //TODO: add September song!
               image: require("@/assets/Albums/Years/September.png"),
-              song: "AlbumsSongs/Years/August.mp3"
-              //image: require("@/assets/Albums/Years/September.png"),
-              //song: "AlbumsSongs/Years/September.mp3"
+              song: "AlbumsSongs/Years/September.mp3"
             },
             {
               name: "October",
@@ -170,7 +167,7 @@ export default {
         },
         {
           listenedSong: -1,
-          title: "Reverse",
+          title: "Versus",
           img: require("@/assets/Albums/versus.png"),
           array: [
             {
@@ -202,6 +199,12 @@ export default {
               name: "Life & Death",
               image: require("@/assets/Albums/Versus/Life&Death.png"),
               song: "AlbumsSongs/Versus/Life&Death.mp3"
+            },
+
+            {
+              name: "Lockdown",
+              image: require("@/assets/Albums/Versus/Lockdown.png"),
+              song: "AlbumsSongs/Versus/Lockdown.mp3"
             }
           ]
         }
