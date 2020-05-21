@@ -14,40 +14,35 @@
       <v-icon class="white--text">{{ icon }}</v-icon>
       <!-- black -->
     </v-btn>
+    <Law />
   </v-bottom-navigation>
 </template>
 
 <script>
+import Law from "@/components/home/Law.vue";
+
 export default {
   name: "MastFoot",
+  components: { Law },
   data() {
     return {
       items: [
         {
-          title: "Facebook",
-          icon: "mdi-facebook",
-          link: "https://www.facebook.com/PhilippeFournierVoquer/"
+          title: "Instagram",
+          icon: "mdi-instagram",
+          link: "https://www.instagram.com/intactinside/"
         },
         {
           title: "Youtube",
           icon: "mdi-youtube",
           link: "https://www.youtube.com/channel/UC2AtMri_kgObNgW2jH7iOFw/"
-        },
-        {
-          title: "Email",
-          icon: "mdi-email",
-          link: ""
         }
       ]
     };
   },
   methods: {
     redirect(link) {
-      if (link !== "") {
-        window.open(link, "_blank");
-      } else {
-        window.location.href = "mailto:intact.inside@gmail.com";
-      }
+      window.open(link, "_blank");
     }
   }
 };

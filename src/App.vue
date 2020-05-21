@@ -2,9 +2,7 @@
   <v-app class="background-image">
     <mast-head />
     <v-content>
-      <v-container fluid class="pa-0 text-center">
-        <router-view />
-      </v-container>
+      <router-view />
     </v-content>
     <mast-foot />
   </v-app>
@@ -66,9 +64,46 @@ export default {
   background: rgba(145, 145, 145, 0.6);
 }
 
-.background-image {
-  background-image: url("assets/background.jpg") !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+@media (min-width: 1000px) {
+  .background-image {
+    /* background-image: url("assets/background.jpg") !important; */
+    /* background-size: cover !important; */
+    /* background-repeat: no-repeat !important; */
+
+    /* background-color: black !important; */
+
+    background-image: linear-gradient(
+      to right top,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #7e76a8,
+      rgb(134, 170, 239)
+    ) !important;
+
+    /* background-image: linear-gradient(
+      to right top,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #000000,
+      #a95c2c,
+      #dca50c
+    ) !important; */
+  }
+}
+
+@media (max-width: 1000px) {
+  .background-image {
+    background-color: black !important;
+  }
 }
 </style>

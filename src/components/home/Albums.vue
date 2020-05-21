@@ -1,9 +1,9 @@
 <template>
-  <v-card color="rgba(255,255,255,.99)" width="60%" class="mt-12" min-width="300px">
+  <v-card color="rgba(255,255,255,.95)">
     <!-- rgba(255,255,255,.5) -->
     <v-card-title>
       <v-icon large left>chevron_right</v-icon>
-      <span class="font-weight-light display-1 black--text">My albums</span>
+      <span class="font-weight-light display-1 black--text">Albums</span>
     </v-card-title>
     <v-card-text>
       <v-list color="transparent">
