@@ -15,20 +15,20 @@
         >
           <template v-slot:activator>
             <v-list-item-avatar>
-              <v-img max-width="40px" max-height="40px" :src="songs[songIndex - 1].img" />
+              <v-img max-width="40px" max-height="40px" :src="albums[songIndex - 1].img" />
             </v-list-item-avatar>
             <v-list-item-title
               class="headline black--text text-left"
-            >{{ songs[songIndex - 1].title }}</v-list-item-title>
+            >{{ albums[songIndex - 1].title }}</v-list-item-title>
           </template>
 
           <v-card class="overflow-y-auto box" color="transparent">
-            <v-list-item-group v-model="songs[songIndex - 1].listenedSong">
+            <v-list-item-group v-model="albums[songIndex - 1].listenedSong">
               <v-list-item
-                v-for="({ name, image, song }, i) in songs[songIndex - 1].array"
+                v-for="({ name, image, song }, i) in albums[songIndex - 1].songs"
                 :key="i"
                 class="inherit"
-                @click="musicEvent(song, songIndex, i)"
+                @click="musicEvent(songIndex, i)"
               >
                 <v-list-item-avatar>
                   <v-img :src="image" />
@@ -49,18 +49,19 @@ export default {
   name: "Albums",
   data() {
     return {
-      sound: {
+      activeSong: {
         song: {},
-        songName: "",
-        isSongActive: false
+        albumIndex: 0,
+        songIndex: 0,
+        active: false
       },
 
-      songs: [
+      albums: [
         {
           listenedSong: -1,
           title: "Space",
           img: require("@/assets/Albums/space.png"),
-          array: [
+          songs: [
             {
               name: "Philae & Rosetta",
               image: require("@/assets/Albums/Space/PhilaeRosetta.png"),
@@ -102,7 +103,7 @@ export default {
           listenedSong: -1,
           title: "Years",
           img: require("@/assets/Albums/years.png"),
-          array: [
+          songs: [
             {
               name: "January",
               image: require("@/assets/Albums/Years/January.png"),
@@ -169,7 +170,7 @@ export default {
           listenedSong: -1,
           title: "Versus",
           img: require("@/assets/Albums/versus.png"),
-          array: [
+          songs: [
             {
               name: "Old & Young (47)",
               image: require("@/assets/Albums/Versus/Old&Young.png"),
@@ -213,39 +214,50 @@ export default {
   },
   methods: {
     clear() {
-      this.songs.forEach((_, i) => {
-        this.songs[i].listenedSong = -1;
+      this.albums.forEach((_, i) => {
+        this.albums[i].listenedSong = -1;
       });
     },
-    musicEvent(song, albumIndex, songIndex) {
+    musicEvent(albumIndex, songIndex) {
       this.clear();
 
-      this.songs[albumIndex - 1].listenedSong = songIndex;
+      this.albums[albumIndex - 1].listenedSong = songIndex;
 
-      if (this.sound.isSongActive === false) {
-        this.listenMusic(song);
-        this.sound.songName = song;
-        this.sound.isSongActive = true;
-      } else if (this.sound.songName === song) {
+      if (
+        this.activeSong.active === true &&
+        this.activeSong.albumIndex === albumIndex &&
+        this.activeSong.songIndex === songIndex
+      ) {
         this.stopMusic();
-        this.sound.songName = "";
-        this.sound.isSongActive = false;
       } else {
-        this.stopMusic();
-        this.listenMusic(song);
-        this.sound.songName = song;
-        this.sound.isSongActive = true;
+        if (this.activeSong.active === true) this.stopMusic();
+        this.listenMusic({ albumIndex, songIndex });
       }
     },
-    listenMusic(path) {
-      this.sound.song = new Howl({
-        src: [window.location.href + path],
-        volume: 0.5
+    listenMusic({ albumIndex, songIndex }) {
+      this.activeSong.song = new Howl({
+        src: [
+          window.location.href +
+            this.albums[albumIndex - 1].songs[songIndex].song
+        ],
+        volume: 0.5,
+        onend: () => {
+          this.listenMusic(this.getNextMusic(albumIndex, songIndex));
+        }
       });
-      this.sound.song.play();
+      this.activeSong.song.play();
+      this.activeSong.albumIndex = albumIndex;
+      this.activeSong.songIndex = songIndex;
+      this.activeSong.active = true;
     },
     stopMusic() {
-      this.sound.song.stop();
+      this.activeSong.song.stop();
+      this.activeSong.active = false;
+    },
+    getNextMusic(albumIndex, songIndex) {
+      return songIndex + 1 < this.albums[albumIndex - 1].songs.length
+        ? { albumIndex: albumIndex - 1, songIndex: songIndex + 1 }
+        : { albumIndex: albumIndex % this.albums.length, songIndex: 0 };
     }
   }
 };
