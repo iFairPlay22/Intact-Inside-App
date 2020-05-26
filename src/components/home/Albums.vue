@@ -10,25 +10,25 @@
         <v-list-group
           class="border-bottom block"
           color="inherit"
-          v-for="songIndex in 3"
-          :key="songIndex"
+          v-for="albumIndex in this.albums.length"
+          :key="albumIndex"
         >
           <template v-slot:activator>
             <v-list-item-avatar>
-              <v-img max-width="40px" max-height="40px" :src="albums[songIndex - 1].img" />
+              <v-img max-width="40px" max-height="40px" :src="albums[albumIndex - 1].img" />
             </v-list-item-avatar>
             <v-list-item-title
               class="headline black--text text-left"
-            >{{ albums[songIndex - 1].title }}</v-list-item-title>
+            >{{ albums[albumIndex - 1].title }}</v-list-item-title>
           </template>
 
           <v-card class="overflow-y-auto box" color="transparent">
-            <v-list-item-group v-model="albums[songIndex - 1].listenedSong">
+            <v-list-item-group v-model="albums[albumIndex - 1].listenedSong">
               <v-list-item
-                v-for="({ name, image, song }, i) in albums[songIndex - 1].songs"
-                :key="i"
+                v-for="({ name, image, song }, songIndex) in albums[albumIndex - 1].songs"
+                :key="songIndex"
                 class="inherit"
-                @click="musicEvent(songIndex, i)"
+                @click="musicEvent(albumIndex - 1, songIndex)"
               >
                 <v-list-item-avatar>
                   <v-img :src="image" />
@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       activeSong: {
-        albumIndex: 1,
+        albumIndex: 0,
         songIndex: 0
       },
 
@@ -236,7 +236,7 @@ export default {
   },
   computed: {
     music() {
-      return this.albums[this.activeSong.albumIndex - 1].songs[
+      return this.albums[this.activeSong.albumIndex].songs[
         this.activeSong.songIndex
       ].name;
     }
@@ -258,8 +258,7 @@ export default {
     },
     play({ albumIndex, songIndex }) {
       this.audio.src =
-        window.location.href +
-        this.albums[albumIndex - 1].songs[songIndex].song;
+        window.location.href + this.albums[albumIndex].songs[songIndex].song;
 
       this.audio.play();
 
@@ -276,7 +275,7 @@ export default {
 
       if (!this.audio.paused) {
         this.albums[
-          this.activeSong.albumIndex - 1
+          this.activeSong.albumIndex
         ].listenedSong = this.activeSong.songIndex;
       }
     },
@@ -284,9 +283,9 @@ export default {
     // GETTERS
 
     getNextMusic(albumIndex, songIndex) {
-      return songIndex + 1 < this.albums[albumIndex - 1].songs.length
-        ? { albumIndex: albumIndex - 1, songIndex: songIndex + 1 }
-        : { albumIndex: albumIndex % this.albums.length, songIndex: 0 };
+      return songIndex + 1 < this.albums[albumIndex].songs.length
+        ? { albumIndex: albumIndex, songIndex: songIndex + 1 }
+        : { albumIndex: albumIndex + (1 % this.albums.length), songIndex: 0 };
     }
   }
 };
