@@ -39,21 +39,28 @@
           </v-card>
         </v-list-group>
       </v-list>
+      <div class="d-flex justify-space-around align-center flex-wrap">
+        <v-card-title>
+          <v-icon left>mdi-music</v-icon>
+          <span class="font-weight-light title black--text">{{ music }}</span>
+        </v-card-title>
+        <audio ref="audio" controls style="border-radius: 5px;">
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-import { Howl } from "howler";
 export default {
   name: "Albums",
   data() {
     return {
       activeSong: {
-        song: {},
-        albumIndex: 0,
-        songIndex: 0,
-        active: false
+        albumIndex: 1,
+        songIndex: 0
       },
 
       albums: [
@@ -212,48 +219,70 @@ export default {
       ]
     };
   },
+  mounted() {
+    this.audio = this.$refs["audio"];
+
+    this.audio.addEventListener("ended", () =>
+      this.play(
+        this.getNextMusic(this.activeSong.albumIndex, this.activeSong.songIndex)
+      )
+    );
+
+    this.audio.addEventListener("play", () => this.refreshView());
+
+    this.audio.addEventListener("pause", () => this.refreshView());
+
+    this.play(this.activeSong);
+  },
+  computed: {
+    music() {
+      return this.albums[this.activeSong.albumIndex - 1].songs[
+        this.activeSong.songIndex
+      ].name;
+    }
+  },
   methods: {
-    clear() {
-      this.albums.forEach((_, i) => {
-        this.albums[i].listenedSong = -1;
-      });
-    },
+    // MUSIC
+
     musicEvent(albumIndex, songIndex) {
-      this.clear();
-
-      this.albums[albumIndex - 1].listenedSong = songIndex;
-
       if (
-        this.activeSong.active === true &&
+        !this.audio.paused &&
         this.activeSong.albumIndex === albumIndex &&
         this.activeSong.songIndex === songIndex
       ) {
-        this.stopMusic();
+        this.audio.pause();
       } else {
-        if (this.activeSong.active === true) this.stopMusic();
-        this.listenMusic({ albumIndex, songIndex });
+        if (!this.audio.paused) this.audio.pause();
+        this.play({ albumIndex, songIndex });
       }
     },
-    listenMusic({ albumIndex, songIndex }) {
-      this.activeSong.song = new Howl({
-        src: [
-          window.location.href +
-            this.albums[albumIndex - 1].songs[songIndex].song
-        ],
-        volume: 0.5,
-        onend: () => {
-          this.listenMusic(this.getNextMusic(albumIndex, songIndex));
-        }
-      });
-      this.activeSong.song.play();
+    play({ albumIndex, songIndex }) {
+      this.audio.src =
+        window.location.href +
+        this.albums[albumIndex - 1].songs[songIndex].song;
+
+      this.audio.play();
+
       this.activeSong.albumIndex = albumIndex;
       this.activeSong.songIndex = songIndex;
-      this.activeSong.active = true;
     },
-    stopMusic() {
-      this.activeSong.song.stop();
-      this.activeSong.active = false;
+
+    // VIEW
+
+    refreshView() {
+      this.albums.forEach((_, i) => {
+        this.albums[i].listenedSong = -1;
+      });
+
+      if (!this.audio.paused) {
+        this.albums[
+          this.activeSong.albumIndex - 1
+        ].listenedSong = this.activeSong.songIndex;
+      }
     },
+
+    // GETTERS
+
     getNextMusic(albumIndex, songIndex) {
       return songIndex + 1 < this.albums[albumIndex - 1].songs.length
         ? { albumIndex: albumIndex - 1, songIndex: songIndex + 1 }

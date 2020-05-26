@@ -1,8 +1,4 @@
 <template>
-  <!-- <v-card height="100%" color="red" class="d-flex flex-column justify-center align-center">
-    <slogan />
-    <albums />
-  </v-card>-->
   <v-card flat color="transparent" height="100%" class="d-flex justify-center align-center">
     <v-container fluid>
       <v-row>
