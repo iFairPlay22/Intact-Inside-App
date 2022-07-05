@@ -1,29 +1,9 @@
-# my-app-front
+# Intact Inside
 
-## Project setup
-```
-npm install
-```
+## Contexte
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Création d'un site web mettant en lumière les compositions musical du pianiste Philippe FOURNIER, du groupe Intact Inside.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Projet
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Site web réalisé en VueJs
